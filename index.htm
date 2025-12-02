@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Book Your Stay</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+  <h2>Book Your Stay</h2>
+  <form id="bookingForm" onsubmit="submitBooking(event)">
+    <label>Full Name</label>
+    <input type="text" id="name" required>
+
+    <label>Phone / WhatsApp Number</label>
+    <input type="text" id="phone" required>
+
+    <div class="row">
+      <div style="flex:1">
+        <label>Booking Date</label>
+        <input type="date" id="date" required>
+      </div>
+      <div style="flex:1">
+        <label>No. of Guests</label>
+        <input type="number" id="guests" min="1" value="1" required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div style="flex:1">
+        <label>Check-in Time</label>
+        <input type="time" id="checkin" required>
+      </div>
+      <div style="flex:1">
+        <label>Check-out Time</label>
+        <input type="time" id="checkout" required>
+      </div>
+    </div>
+
+    <label>Notes (Optional)</label>
+    <textarea id="note"></textarea>
+
+    <button type="submit">Submit Booking</button>
+    <div id="formMsg" style="margin-top:10px;font-weight:bold;"></div>
+  </form>
+</div>
+
+<div class="card">
+  <h2>Weekly Occupancy</h2>
+  <p>Select a date to see the weekly availability.</p>
+
+  <div class="row">
+    <div style="flex:1">
+      <input type="date" id="weekStart">
+    </div>
+    <div style="width:140px">
+      <button onclick="loadOccupancy()">Load</button>
+    </div>
+  </div>
+
+  <div id="calendar" style="margin-top:15px;"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
